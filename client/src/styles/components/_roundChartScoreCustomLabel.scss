@@ -1,0 +1,14 @@
+.roundChartScoreCustomLabel {
+
+    &__percent {
+        font-size: 1.4rem;
+        fill: $color-dark-secondary;
+        font-weight: 500;
+    }
+
+    &__text {
+        font-size: 1rem;
+        fill: $color-grey-primary;
+        font-weight: 500;
+    }
+}

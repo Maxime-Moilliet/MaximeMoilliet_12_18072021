@@ -18,7 +18,7 @@ export class BarChartActivities extends React.Component {
         const uid = this.context
         /**
          * function called API and setData with response API. If error, log error message in console
-         */
+        */
         const fetchUserActivities = async () => {
             try {
                 const response = await axios.get(`/user/${uid}/activity`)

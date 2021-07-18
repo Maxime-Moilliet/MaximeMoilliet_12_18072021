@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import { UidContext } from './context/UidContext'
 
 function App() {
-  const userId = 12
+  const userId = 18
 
   return (
     <UidContext.Provider value={userId}>

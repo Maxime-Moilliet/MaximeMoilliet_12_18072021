@@ -3,6 +3,7 @@ import { UserInfo } from '../components/UserInfo'
 import { BarChartActivities } from '../components/BarChartActivities'
 import { LineChartAverageSession } from '../components/LineChartAverageSession'
 import { RadarChartScore } from '../components/RadarChartScore'
+import { RoundChartScore } from '../components/RoundChartScore'
 
 export class Dashboard extends React.Component {
     render () {
@@ -16,7 +17,7 @@ export class Dashboard extends React.Component {
                             <div className="dashboard__container-left-bottom">
                                 <LineChartAverageSession />
                                 <RadarChartScore />
-                                {/* <RoundChartScore /> */}
+                                <RoundChartScore />
                             </div>
                         </div>
                         <div className="dashboard__container-right">
