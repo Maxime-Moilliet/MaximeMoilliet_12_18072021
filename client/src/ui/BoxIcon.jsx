@@ -1,12 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function BoxIcon({ background, iconUrl, iconAlt, size }) {
-    return (
-        <div className={size === 'xl' ? 'boxIcon xl' : 'boxIcon'} style={{ backgroundColor: background ? background : '#ffffff'}}>
-            <img className='boxIcon__icon' src={iconUrl} alt={iconAlt}/>
-        </div>
-    )
+export class BoxIcon extends React.Component {
+    render () {
+        const { background, iconUrl, iconAlt, size } = this.props
+        return (
+            <div className={size === "xl" ? "boxIcon xl" : "boxIcon"} style={{backgroundColor: background ? background : "#ffffff"}}>
+                <img src={iconUrl} alt={iconAlt} />
+            </div>
+        )
+    }
 }
 
 BoxIcon.propTypes = {
@@ -15,6 +18,3 @@ BoxIcon.propTypes = {
     iconAlt: PropTypes.string.isRequired,
     size: PropTypes.string
 }
-
-export default BoxIcon
-

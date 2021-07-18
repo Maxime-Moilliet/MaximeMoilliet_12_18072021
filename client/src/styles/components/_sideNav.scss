@@ -1,0 +1,27 @@
+.sideNav {
+    background-color: $color-dark-primary;
+    width: 115px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 100px;
+
+    &__nav {
+        margin-top: 200px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    &__nav > * + * {
+        margin-top: 20px;
+    }
+
+    &__copiryght {
+        transform: rotate(-90deg);
+        color: #ffffff;
+        white-space: nowrap;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+}
