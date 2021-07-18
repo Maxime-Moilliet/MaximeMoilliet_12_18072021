@@ -1,6 +1,6 @@
 import React from 'react'
 import { UidContext } from '../context/UidContext'
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
 import axios from 'axios'
 import { BarChartActivitiesCustomTooltip } from './BarChartActivitiesCustomTooltip'
 
