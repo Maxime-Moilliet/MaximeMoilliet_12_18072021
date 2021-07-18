@@ -1,0 +1,20 @@
+.userInfo {
+
+    &__title {
+        font-size: 3.2rem;
+        font-weight: 500;
+        color: #000000;
+        
+        &-active {
+            font-size: 3.2rem;
+            font-weight: 500;
+            color: $color-red-primary;
+        }
+    }
+
+    &__info {
+        font-size: 1.2rem;
+        margin-top: 40px;
+        color: #000000;
+    }
+}

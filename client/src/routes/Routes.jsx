@@ -12,7 +12,6 @@ export default function Routes() {
             <SideNav />
             <Switch>
                 <Route exact path='/' component={Dashboard} />
-
             </Switch>
         </div>
         </>

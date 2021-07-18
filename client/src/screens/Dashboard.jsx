@@ -1,11 +1,12 @@
 import React from 'react'
+import { UserInfo } from '../components/UserInfo'
 
 export class Dashboard extends React.Component {
     render () {
         return (
-            <div>
-                salut
-            </div>
+            <main className="container__main">
+                <UserInfo />
+            </main>
         )
     }
 }

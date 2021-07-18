@@ -1,3 +1,8 @@
 .container {
     display: flex;
+
+    &__main {
+        padding: 60px 170px;
+        width: 100%;
+    }
 }
