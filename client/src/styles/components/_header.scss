@@ -1,0 +1,39 @@
+.header {
+    background-color: $color-dark-primary;
+    height: 91px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 80px;
+    
+    &__logo {
+        display: flex;
+        align-items: center;
+        margin-right: 130px;
+
+        &-title {
+            color: $color-red-primary;
+            font-size: 2.4rem;
+        }
+
+        &-img {
+            margin-right: 10px;
+            width: 4.2rem;
+            height: 4.2rem;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        &-link {
+            color: #ffffff;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+    }
+}
