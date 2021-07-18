@@ -4,7 +4,7 @@ import { FakeUserInfo } from '../ui/FakeUserInfo';
 import axios from 'axios'
 
 export class UserInfo extends React.Component {
-    static contextType = UidContext;
+    static contextType = UidContext
     
     constructor(props) {
         super(props)

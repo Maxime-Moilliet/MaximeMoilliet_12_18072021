@@ -1,0 +1,51 @@
+.barChartActivities {
+    padding: 24px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+    background-color: $color-grey-fourth;
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+
+        &-title {
+            font-size: 1.3rem;
+            color: $color-dark-secondary;
+            font-weight: 500;
+        }
+
+        &-legend {
+            margin-top: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &-legend > * + * {
+            margin-left: 30px;
+        }
+
+        &-info {
+            font-size: 1rem;
+            color: $color-grey-primary;
+            font-weight: 500;
+        }
+
+        &-info:before {
+            display: inline-block;
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: $color-dark-third;
+            margin-bottom: 2px;
+            margin-right: 10px;
+        }
+
+        &-info:last-child:before {
+            background-color: $color-red-primary;
+        }
+    }
+}

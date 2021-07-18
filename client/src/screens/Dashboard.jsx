@@ -1,5 +1,6 @@
 import React from 'react'
 import { UserInfo } from '../components/UserInfo'
+import { BarChartActivities } from '../components/BarChartActivities'
 
 export class Dashboard extends React.Component {
     render () {
@@ -9,7 +10,7 @@ export class Dashboard extends React.Component {
                 <div className="dashboard">
                     <div className="dashboard__container">
                         <div className="dashboard__container-left">
-                            {/* <BarChartActivities /> */}
+                            <BarChartActivities />
                             <div className="dashboard__container-left-bottom">
                                 {/* <LineChartAverageSession /> */}
                                 {/* <RadarChartScore /> */}

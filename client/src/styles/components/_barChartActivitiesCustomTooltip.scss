@@ -1,0 +1,17 @@
+.BarChartActivitiesCustomTooltip {
+    width: 40px;
+    padding: 10px 7px;
+    background-color: $color-red-primary;
+    text-align: center;
+
+    &__text {
+        font-size: .7rem;
+        font-weight: 500;
+        color: #ffffff;
+        line-height: 1.2rem;
+    }
+}
+
+.BarChartActivitiesCustomTooltip > * + * {
+    margin-top: 7px;
+}
