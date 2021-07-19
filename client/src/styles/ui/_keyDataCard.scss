@@ -1,0 +1,26 @@
+.keyDataCard {
+    padding: 32px;
+    width: 220px;
+    background-color: $color-grey-fourth;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+
+    &__content {
+        margin-left: 24px;
+
+        &-value {
+            font-size: 1.4rem;
+            color: $color-dark-third;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        &-name {
+            font-size: 1rem;
+            color: $color-grey-primary;
+            font-weight: 500;
+        }
+    }
+}

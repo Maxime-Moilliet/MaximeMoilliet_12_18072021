@@ -1,0 +1,18 @@
+.fakeKeyDataCard {
+    width: 220px;
+    height: 60px;
+    padding: 32px;
+    border-radius: 5px;
+    background: linear-gradient(110deg, #e0e0e0 8%, #f1f1f1 18%, #e0e0e0 33%);
+    animation: 1.2s shine linear infinite;
+
+    &__value {
+        color: transparent;
+    }
+}
+
+@keyframes shine {
+    to {
+        background-position-x: 200px;
+    }
+}

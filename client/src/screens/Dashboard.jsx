@@ -4,6 +4,7 @@ import { BarChartActivities } from '../components/BarChartActivities'
 import { LineChartAverageSession } from '../components/LineChartAverageSession'
 import { RadarChartScore } from '../components/RadarChartScore'
 import { RoundChartScore } from '../components/RoundChartScore'
+import { KeyData } from '../components/KeyData'
 
 export class Dashboard extends React.Component {
     render () {
@@ -21,7 +22,7 @@ export class Dashboard extends React.Component {
                             </div>
                         </div>
                         <div className="dashboard__container-right">
-                            {/* <KeyData /> */}
+                            <KeyData />
                         </div>
                     </div>
                 </div>
