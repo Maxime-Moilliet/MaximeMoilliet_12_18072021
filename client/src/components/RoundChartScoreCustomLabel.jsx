@@ -7,7 +7,7 @@ export class RoundChartScoreCustomLabel extends React.Component {
         const { cx, cy } = viewBox
 
         return (
-            <>
+            value && <>
             <text x={cx - 15} y={cy - 5}>
                 <tspan className="roundChartScoreCustomLabel__percent">
                     {`${value * 100}%`}
@@ -29,6 +29,6 @@ export class RoundChartScoreCustomLabel extends React.Component {
 }
 
 RoundChartScoreCustomLabel.propTypes = {
-    value: PropTypes.number.isRequired,
-    viewBox: PropTypes.object.isRequired
+    value: PropTypes.number,
+    viewBox: PropTypes.object
 }

@@ -22,7 +22,6 @@ export class RoundChartScore extends React.Component {
         const fetchUserScoreToday = async () => {
             try {
                 const response = await axios.get(`/user/${uid}`)
-                console.log(response.data.data.todayScore);
                 this.setState({data: [{value: response.data.data.todayScore}, {value: 1 - response.data.data.todayScore}]})
             } catch(err) {
                 console.log(`failed API get user activities /user/:id ${err?.message}`)
