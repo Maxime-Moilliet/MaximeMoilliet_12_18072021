@@ -56,7 +56,7 @@ export class BarChartActivities extends React.Component {
                     </ul>
                 </div>
 
-                <BarChart width={820} height={200} data={data}>
+                <BarChart width={800} height={200} data={data}>
                     <CartesianGrid strokeDasharray="3 3" vertical={false} />
                     <XAxis tickSize={20} axisLine={false} tickLine={false} dataKey="day" tick={{stroke: '#9B9EAC', strokeWidth: .1}}  />
                     <YAxis tickSize={20} domain={[minYKilogram, maxYKilogram]} axisLine={false} interval="number" tickCount={3.5} tickLine={false} yAxisId="kilo" orientation="right" tick={{stroke: '#9B9EAC', strokeWidth: .1}} />
