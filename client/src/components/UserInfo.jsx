@@ -1,7 +1,7 @@
 import React from 'react'
 import { UidContext } from '../context/UidContext';
 import { FakeUserInfo } from '../ui/FakeUserInfo';
-import axios from 'axios'
+import Service from '../services/services';
 
 export class UserInfo extends React.Component {
     static contextType = UidContext
@@ -12,6 +12,7 @@ export class UserInfo extends React.Component {
             userName: '',
             loading: false
         }
+        this.service = new Service()
     }
 
     componentDidMount() {
@@ -22,10 +23,10 @@ export class UserInfo extends React.Component {
          const fetchUserName = async () => {
             this.setState({loading: true})
             try {
-                const response = await axios.get(`/user/${uid}`)
-                this.setState({userName: response.data.data.userInfos.firstName, loading: false})
+                const userName = await this.service.getUserName(uid)
+                this.setState({userName: userName, loading: false})
             } catch(err) {
-                console.log(`failed API get firstName /user/:id ${err?.message}`)
+                window.location.pathname = "/not-found"
             }
         }
         fetchUserName()

@@ -1,7 +1,7 @@
 import React from 'react'
 import { UidContext } from '../context/UidContext'
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from "recharts"
-import axios from 'axios'
+import Service from '../services/services'
 
 export class RadarChartScore extends React.Component {
     static contextType = UidContext
@@ -12,6 +12,7 @@ export class RadarChartScore extends React.Component {
             kind: null,
             data: null
         }
+        this.service = new Service()
         this.getKindNameFormatted = this.getKindNameFormatted.bind(this)
     }
 
@@ -22,10 +23,10 @@ export class RadarChartScore extends React.Component {
          */
          const fetchUserPerformance = async () => {
             try {
-                const response = await axios.get(`/user/${uid}/performance`)
-                this.setState({data: response.data.data.data, kind: response.data.data.kind})
+                const { performance, kind } = await this.service.getUserPerformance(uid)
+                this.setState({data: performance, kind: kind})
             } catch(err) {
-                console.log(`failed API get user activities /user/:id/performance ${err?.message}`)
+                window.location.pathname = "/not-found"
             }
         }
         fetchUserPerformance()

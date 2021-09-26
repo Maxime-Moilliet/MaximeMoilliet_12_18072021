@@ -1,8 +1,8 @@
 import React from 'react'
 import { UidContext } from '../context/UidContext'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
-import axios from 'axios'
 import { BarChartActivitiesCustomTooltip } from './BarChartActivitiesCustomTooltip'
+import Service from '../services/services'
 
 export class BarChartActivities extends React.Component {
     static contextType = UidContext
@@ -12,6 +12,7 @@ export class BarChartActivities extends React.Component {
         this.state = {
             data: null
         }
+        this.service = new Service()
     }
 
     componentDidMount() {
@@ -21,10 +22,10 @@ export class BarChartActivities extends React.Component {
         */
         const fetchUserActivities = async () => {
             try {
-                const response = await axios.get(`/user/${uid}/activity`)
-                this.setState({data: response.data.data.sessions})
+                const activities = await this.service.getUserActivities(uid);
+                this.setState({data: activities})
             } catch(err) {
-                console.log(`failed API get user activities /user/:id/activity ${err?.message}`)
+                window.location.pathname = "/not-found"
             }
         }
         fetchUserActivities()

@@ -2,7 +2,7 @@ import React from 'react'
 import { KeyDataCard } from '../ui/KeyDataCard'
 import { FakeKeyDataCard } from '../ui/FakeKeyDataCard'
 import { UidContext } from '../context/UidContext'
-import axios from 'axios'
+import Service from '../services/services'
 
 export class KeyData extends React.Component {
     static contextType = UidContext
@@ -13,6 +13,7 @@ export class KeyData extends React.Component {
             data: null,
             loading: false
         }
+        this.service = new Service()
     }
 
     componentDidMount() {
@@ -23,10 +24,10 @@ export class KeyData extends React.Component {
         const fetchKeyData = async () => {
             this.setState({ loading: true })
             try {
-                const response = await axios.get(`/user/${uid}`)
-                this.setState({data: response.data.data.keyData, loading: false })
+                const dataKey = await this.service.getUserKeyData(uid)
+                this.setState({data: dataKey, loading: false })
             } catch (err) {
-                console.log(`failed API get user key-data /user/:id ${err?.message}`)
+                window.location.pathname = "/not-found"
             }
         }
         fetchKeyData()

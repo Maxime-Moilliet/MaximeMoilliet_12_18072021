@@ -1,8 +1,8 @@
 import React from 'react'
 import { UidContext } from '../context/UidContext'
 import { PieChart, Pie, Label, Cell } from "recharts"
-import axios from 'axios'
 import { RoundChartScoreCustomLabel } from './RoundChartScoreCustomLabel'
+import Service from '../services/services'
 
 export class RoundChartScore extends React.Component {
     static contextType = UidContext
@@ -12,6 +12,7 @@ export class RoundChartScore extends React.Component {
         this.state = {
             data: []
         }
+        this.service = new Service()
     }
 
     componentDidMount() {
@@ -21,15 +22,16 @@ export class RoundChartScore extends React.Component {
         */
         const fetchUserScoreToday = async () => {
             try {
-                const response = await axios.get(`/user/${uid}`)
-                this.setState({data: [{value: response.data.data.todayScore}, {value: 1 - response.data.data.todayScore}]})
+                const todayScore = await this.service.getUserTodayScore(uid)
+                this.setState({data: todayScore})
             } catch(err) {
-                console.log(`failed API get user activities /user/:id ${err?.message}`)
+                window.location.pathname = "/not-found"
             }
         }
         fetchUserScoreToday()
     }
-
+    
+    
     render () {
         const { data } = this.state
         return (

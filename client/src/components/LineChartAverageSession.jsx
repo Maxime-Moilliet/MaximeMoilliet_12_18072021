@@ -1,8 +1,8 @@
 import React from 'react'
 import { UidContext } from '../context/UidContext'
-import axios from 'axios'
 import { LineChart, Line, XAxis, YAxis, Tooltip } from 'recharts'
 import { LineChartAverageSessionCustomTooltip } from './LineChartAverageSessionCustomTooltip'
+import Service from '../services/services'
 
 export class LineChartAverageSession extends React.Component {
     static contextType = UidContext
@@ -12,6 +12,7 @@ export class LineChartAverageSession extends React.Component {
         this.state = {
             data: null
         }
+        this.service = new Service()
     }
 
     componentDidMount() {
@@ -21,10 +22,10 @@ export class LineChartAverageSession extends React.Component {
         */
         const fetchUserAverageSession = async () => {
             try {
-                const response = await axios.get(`/user/${uid}/average-sessions`)
-                this.setState({data: response.data.data.sessions})
+                const averageSessions = await this.service.getUserAverageSessions(uid)
+                this.setState({data: averageSessions})
             } catch(err) {
-                console.log(`failed API get user average session /user/:id/average-sessions ${err?.message}`)
+                window.location.pathname = "/not-found"
             }
         }
         fetchUserAverageSession()
